@@ -9,7 +9,11 @@
 <body>
   <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 
-  <div id="app">{{ message }}</div>
+  <div id="app">
+    <button v-on:click="counter--">-</button>
+    {{ counter }}
+    <button v-on:click="counter++">+</button>
+  </div>
   
   <script>
     const { createApp } = Vue
@@ -17,7 +21,7 @@
     createApp({
       data() {
         return {
-          message: 'Hello Vue!'
+          counter: 0,
         }
       }
     }).mount('#app')
