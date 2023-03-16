@@ -7,10 +7,12 @@
   <title>Document</title>
 </head>
 <body>
-  <div id="app">{{ message }}</div>
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 
-  <script type="module">
-    import { createApp } from 'https://unpkg.com/vue@3/dist/vue.esm-browser.js'
+  <div id="app">{{ message }}</div>
+  
+  <script>
+    const { createApp } = Vue
   
     createApp({
       data() {
