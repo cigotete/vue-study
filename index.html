@@ -10,16 +10,25 @@
   <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 
   <div id="app">
+    <form action="" v-on:submit.prevent="addPais()">
     <input type="text" v-model="name">
-    <p>Hola {{ name }}</p>
+    </form>
 
+    {{ paises }}
   </div>
   
   <script>
     Vue.createApp({
       data() {
         return {
-          name: ""
+          name: "",
+          paises: ['Peru', 'Bolivia']
+        }
+      },
+      methods: {
+        addPais() {
+          this.paises.push(this.name);
+          this.name = "";
         }
       }
     }).mount('#app')
