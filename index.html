@@ -11,10 +11,24 @@
 
   <div id="app">
     <form action="" v-on:submit.prevent="addPais()">
-    <input type="text" v-model="name">
+    <label>Name</label>
+    <input type="text" v-model="name"><br>
+    <label>Capital</label>
+    <input type="text" v-model="capital"><br>
+    <button>Agregar</button>
     </form>
 
-    {{ paises }}
+    <ul>
+      <li v-for="(pais, index) in paises" :key="pais.name">
+        {{ index + 1 }}) Country: {{ pais.name }} - Capital: {{ pais.capital }}
+      </li>
+    </ul>
+
+    <template v-for="(pais, index) in paises" :key="pais.name">
+      <li>
+        {{ index + 1 }}) Country: {{ pais.name }} - Capital: {{ pais.capital }}
+      </li>
+    </template>
   </div>
   
   <script>
@@ -22,13 +36,29 @@
       data() {
         return {
           name: "",
-          paises: ['Peru', 'Bolivia']
+          capital: "",
+          paises: [
+            {
+              name: "Peru",
+              capital: "Lima",
+            },
+            {
+              name: "Bolivia",
+              capital: "Sucre",
+            }
+          ]
         }
       },
       methods: {
         addPais() {
-          this.paises.push(this.name);
+          if (this.name != '' && this.capital != '') {
+            this.paises.push({
+              name: this.name,
+              capital: this.capital
+            });
+          }
           this.name = "";
+          this.capital = "";
         }
       }
     }).mount('#app')
