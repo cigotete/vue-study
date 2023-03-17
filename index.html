@@ -30,6 +30,8 @@
 
     <p v-bind:class="active ? 'text-blue' : 'text-red'">Text to receive changes from Vue</p>
 
+    <p :class="colorClassComputed">Text to receive changes from Vue</p>
+
   </div>
   
   <script>
@@ -38,6 +40,11 @@
         return {
           color: 'black',
           active: true
+        }
+      },
+      computed: {
+        colorClassComputed() {
+          return this.active ? 'text-blue' : 'text-red';
         }
       },
       methods: {
