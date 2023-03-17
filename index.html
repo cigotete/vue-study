@@ -32,6 +32,12 @@
 
     <h3 v-if="active">This is a text to show on true</h3>
     <h3 v-else>This is a text to show on false</h3>
+
+    <div v-if="type == 'A'">A</div>
+    <div v-else-if="type == 'B'">B</div>
+    <div v-else-if="type == 'C'">C</div>
+    <div v-else>Not A, B or C</div>
+
   </div>
   
   <script>
@@ -39,6 +45,7 @@
       data() {
         return {
           active: false,
+          type: 'D',
           name: "",
           capital: "",
           paises: [
