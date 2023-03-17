@@ -4,20 +4,40 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/css.css">
   <title>Document</title>
 </head>
 <body>
   <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 
   <div id="app">
+
+    <button v-on:click="changeClass('red')">Red</button>
+    <button v-on:click="changeClass('green')">Green</button>
+    <button @click="changeClass('blue')">Blue</button>
+    <button @click="color = 'red'">Red</button>
+    <button v-on:click="color = 'green'">Green</button>
+    <button v-on:click="color = 'blue'">Blue</button>
+
+    <p v-bind:class="'text-' + color">Text to receive changes from Vue</p>
+
+    {{ 'text-' + color }}
+
+
   </div>
   
   <script>
     Vue.createApp({
       data() {
         return {
+          color: 'black',
         }
       },
+      methods: {
+        changeClass(color) {
+          this.color = color;
+        }
+      }
     }).mount('#app')
   </script>
 </body>
