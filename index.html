@@ -41,13 +41,16 @@
     <template v-if="active">
       Huge content.
     </template>
+    <template v-show="active">
+      Huge content with v-show.
+    </template>
   </div>
   
   <script>
     Vue.createApp({
       data() {
         return {
-          active: true,
+          active: false,
           type: 'D',
           name: "",
           capital: "",
