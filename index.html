@@ -10,74 +10,14 @@
   <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 
   <div id="app">
-    <form action="" v-on:submit.prevent="addPais()">
-    <label>Name</label>
-    <input type="text" v-model="name"><br>
-    <label>Capital</label>
-    <input type="text" v-model="capital"><br>
-    <button>Agregar</button>
-    </form>
-
-    <ul>
-      <li v-for="(pais, index) in paises" :key="pais.name">
-        {{ index + 1 }}) Country: {{ pais.name }} - Capital: {{ pais.capital }}
-      </li>
-    </ul>
-
-    <template v-for="(pais, index) in paises" :key="pais.name">
-      <li>
-        {{ index + 1 }}) Country: {{ pais.name }} - Capital: {{ pais.capital }}
-      </li>
-    </template>
-
-    <h3 v-if="active">This is a text to show on true</h3>
-    <h3 v-else>This is a text to show on false</h3>
-
-    <div v-if="type == 'A'">A</div>
-    <div v-else-if="type == 'B'">B</div>
-    <div v-else-if="type == 'C'">C</div>
-    <div v-else>Not A, B or C</div>
-
-    <template v-if="active">
-      Huge content.
-    </template>
-    <template v-show="active">
-      Huge content with v-show.
-    </template>
   </div>
   
   <script>
     Vue.createApp({
       data() {
         return {
-          active: false,
-          type: 'D',
-          name: "",
-          capital: "",
-          paises: [
-            {
-              name: "Peru",
-              capital: "Lima",
-            },
-            {
-              name: "Bolivia",
-              capital: "Sucre",
-            }
-          ]
         }
       },
-      methods: {
-        addPais() {
-          if (this.name != '' && this.capital != '') {
-            this.paises.push({
-              name: this.name,
-              capital: this.capital
-            });
-          }
-          this.name = "";
-          this.capital = "";
-        }
-      }
     }).mount('#app')
   </script>
 </body>
