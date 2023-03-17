@@ -23,6 +23,12 @@
 
     {{ 'text-' + color }}
 
+    <button @click="active = !active">
+      <span v-if="active">Desactivar</span>
+      <span v-else>Activar</span>
+    </button>
+
+    <p v-bind:class="active ? 'text-blue' : 'text-red'">Text to receive changes from Vue</p>
 
   </div>
   
@@ -31,6 +37,7 @@
       data() {
         return {
           color: 'black',
+          active: true
         }
       },
       methods: {
