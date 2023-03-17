@@ -38,13 +38,16 @@
     <div v-else-if="type == 'C'">C</div>
     <div v-else>Not A, B or C</div>
 
+    <template v-if="active">
+      Huge content.
+    </template>
   </div>
   
   <script>
     Vue.createApp({
       data() {
         return {
-          active: false,
+          active: true,
           type: 'D',
           name: "",
           capital: "",
