@@ -8,51 +8,5 @@
   <title>Document</title>
 </head>
 <body>
-  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-
-  <div id="app">
-
-    <button v-on:click="changeClass('red')">Red</button>
-    <button v-on:click="changeClass('green')">Green</button>
-    <button @click="changeClass('blue')">Blue</button>
-    <button @click="color = 'red'">Red</button>
-    <button v-on:click="color = 'green'">Green</button>
-    <button v-on:click="color = 'blue'">Blue</button>
-
-    <p v-bind:class="'text-' + color">Text to receive changes from Vue</p>
-
-    {{ 'text-' + color }}
-
-    <button @click="active = !active">
-      <span v-if="active">Desactivar</span>
-      <span v-else>Activar</span>
-    </button>
-
-    <p v-bind:class="active ? 'text-blue' : 'text-red'">Text to receive changes from Vue</p>
-
-    <p :class="colorClassComputed">Text to receive changes from Vue</p>
-
-  </div>
-  
-  <script>
-    Vue.createApp({
-      data() {
-        return {
-          color: 'black',
-          active: true
-        }
-      },
-      computed: {
-        colorClassComputed() {
-          return this.active ? 'text-blue' : 'text-red';
-        }
-      },
-      methods: {
-        changeClass(color) {
-          this.color = color;
-        }
-      }
-    }).mount('#app')
-  </script>
 </body>
 </html>
