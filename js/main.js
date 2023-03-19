@@ -23,6 +23,11 @@ const app = Vue.createApp({
         }
       ]
     }
+  },
+  methods: {
+    increaseText(size) {
+      this.textSize += size;
+    }
   }
 });
 
