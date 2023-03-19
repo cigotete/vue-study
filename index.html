@@ -9,12 +9,13 @@
 </head>
 <body>
   <div id="app">
-    <detail-items v-for="item in items" :key="item.id" :item="item"></detail-items>
+    <div :style="{ fontSize: textSize + 'em' }">
+      <detail-items @increase-text="textSize += $event" v-for="item in items" :key="item.id" :item="item"></detail-items>
+    </div>
   </div>
 
   <script src="https://unpkg.com/vue@next"></script>
   <script src="js/main.js"></script>
-
 
   <script>
     app.mount('#app');

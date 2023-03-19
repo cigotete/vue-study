@@ -4,6 +4,7 @@ const app = Vue.createApp({
     return {
       message: "Hello Vue!",
       count: 5,
+      textSize: 1,
       items: [
         {
           id: 1,
@@ -44,9 +45,11 @@ app.component('detail-items', {
   data() {
     return {}
   },
+  emits: ['increaseText'],
   props: ['item'],
   template: `
     <h1>Item: {{item.name}}</h1>
     <p>Price: {{'$' + item.price}}</p>
+    <button @click="$emit('increaseText', 0.1)">Incrementar tamaño de fuente</button>
   `
 });
