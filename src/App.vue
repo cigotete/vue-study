@@ -1,15 +1,15 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <h1>Title outside CounterTimes component</h1>
+  <counter-times />
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import CounterTimes from './components/CounterTimes'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    CounterTimes
   }
 }
 </script>
