@@ -10,7 +10,9 @@
 <body>
   <div id="app">
     <div :style="{ fontSize: textSize + 'em' }">
-      <detail-items @increase-text="increaseText" :item="item" :detail="'This is a text passed as parameter'"></detail-items>
+      <detail-items @increase-text="increaseText" :item="item" :detail="'This is a text passed as parameter'">
+        <p>This is a text passed through slot.</p>
+      </detail-items>
     </div>
   </div>
 

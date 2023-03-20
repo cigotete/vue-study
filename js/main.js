@@ -44,6 +44,7 @@ app.component('detail-items', {
     <h1>Item: {{item.name}}</h1>
     <p>Price: {{'$' + item.price}}</p>
     <p>{{ detail }}</p>
+    <slot></slot>
     <button @click="$emit('increaseText', 0.1)">Incrementar tamaño de fuente</button>
   `
 });
