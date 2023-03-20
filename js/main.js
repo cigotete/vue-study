@@ -5,23 +5,11 @@ const app = Vue.createApp({
       message: "Hello Vue!",
       count: 5,
       textSize: 1,
-      items: [
-        {
-          id: 1,
-          name: 'Lorem ipsum dolor sit amet, qui minim labore',
-          price: 10
-        },
-        {
-          id: 2,
-          name: 'Adipisicing minim sint cillum sint consectetur cupidatat',
-          price: 12
-        },
-        {
-          id: 3,
-          name: 'Minim labore adipisicing minim sint cillum sint consectetur cupidatat',
-          price: 6
-        }
-      ]
+      item: {
+        id: 1,
+        name: 'Lorem ipsum dolor sit amet, qui minim labore',
+        price: 10
+      }
     }
   },
   methods: {
@@ -51,10 +39,11 @@ app.component('detail-items', {
     return {}
   },
   emits: ['increaseText'],
-  props: ['item'],
+  props: ['item', 'detail'],
   template: `
     <h1>Item: {{item.name}}</h1>
     <p>Price: {{'$' + item.price}}</p>
+    <p>{{ detail }}</p>
     <button @click="$emit('increaseText', 0.1)">Incrementar tamaño de fuente</button>
   `
 });
