@@ -3,6 +3,7 @@ import HomeView from '../views/HomeView.vue'
 import BlogComponent from '../components/BlogComponent.vue'
 import PostComponent from '../components/PostComponent.vue'
 import UserPostComponent from '../components/UserPostComponent.vue'
+import NotFoundComponent from '../components/NotFoundComponent.vue'
 
 const routes = [
   {
@@ -32,6 +33,11 @@ const routes = [
     path: '/user/:user/post/:post',
     name: 'user-post',
     component: UserPostComponent
+  },
+  {
+    path: '/:pathMatch(.*)',
+    name: 'not-found',
+    component: NotFoundComponent
   },
 ]
 
