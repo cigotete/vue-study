@@ -58,6 +58,7 @@ const routes = [
     path: '/users/:userId(\\d+)?',
     name: 'users-list',
     component: UsersComponent,
+    props: true,
     children: [
       {
         path: '',

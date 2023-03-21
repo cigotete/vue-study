@@ -7,9 +7,9 @@
   </div>
 
   <div id="nav">
-    <router-link :to="{name: 'user-index', params: {userId: $route.params.userId}}">User index</router-link> |
-    <router-link :to="{name: 'profile', params: {userId: $route.params.userId}}">Profile</router-link> |
-    <router-link :to="{name: 'courses', params: {userId: $route.params.userId}}">Courses</router-link>
+    <router-link :to="{name: 'user-index', params: {userId: userId}}">User index</router-link> |
+    <router-link :to="{name: 'profile', params: {userId: userId}}">Profile</router-link> |
+    <router-link :to="{name: 'courses', params: {userId: userId}}">Courses</router-link>
   </div>
 
   <router-view />
@@ -18,7 +18,7 @@
 
 <script>
 export default {
-
+  props: ['userId'],
 }
 </script>
 
