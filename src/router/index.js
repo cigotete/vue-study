@@ -27,11 +27,15 @@ const routes = [
   },
   {
     path: '/blog',
+    redirect: { name: 'blog' }
+  },
+  {
+    path: '/posts',
     name: 'blog',
     component: BlogComponent
   },
   {
-    path: '/blog/:post',
+    path: '/posts/:post',
     name: 'post',
     component: PostComponent
   },
