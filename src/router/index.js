@@ -40,11 +40,6 @@ const routes = [
     component: PostComponent
   },
   {
-    path: '/user/:user/post/:post',
-    name: 'user-post',
-    component: UserPostComponent
-  },
-  {
     path: '/store/:orderId(\\d+)',
     name: 'order',
     component: OrderComponent
@@ -53,6 +48,11 @@ const routes = [
     path: '/store/:product',
     name: 'product',
     component: ProductComponent
+  },
+  {
+    path: '/user/:user/post/:post',
+    name: 'user-post',
+    component: UserPostComponent
   },
   {
     path: '/users/:userId(\\d+)?',
