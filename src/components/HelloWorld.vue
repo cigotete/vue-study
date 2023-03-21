@@ -1,6 +1,9 @@
 <template>
   <div class="hello">
-    <h1>{{ msg }}</h1>
+    <h1>{{ message }}</h1>
+
+    <button @click="message = 'Hello world from updated() method'">Change a value to test updated() lifecycle method.</button>
+
     <p>
       For a guide and recipes on how to configure / customize this project,<br>
       check out the
@@ -35,6 +38,37 @@ export default {
   name: 'HelloWorld',
   props: {
     msg: String
+  },
+  data() {
+    return {
+      message: 'Hello World'
+    }
+  },
+  beforeCreate() {
+    this.message = 'Hello World beforeCreate';
+    console.log(this.message);
+  },
+
+  // This lifecycle hook is suitable for api or db calls,
+  // at beginning of the component load.
+  created() {
+    console.log(this.message);
+  },
+
+  // This lifecycle hook is suitable for when component is already rendered.
+  mounted() {
+    console.log('mounted');
+  },
+
+  // Only works when DOM changes.
+  updated() {
+    console.log('updated');
+  },
+
+  // Works when component is destroyed.
+  // For example, when page is leaved or reloaded.
+  unmounted() {
+    console.log('unmounted');
   }
 }
 </script>
