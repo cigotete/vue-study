@@ -6,7 +6,10 @@ import UserPostComponent from '../components/UserPostComponent.vue'
 import NotFoundComponent from '../components/NotFoundComponent.vue'
 import OrderComponent from '../components/OrderComponent.vue'
 import ProductComponent from '../components/ProductComponent.vue'
-import UsersComponent from '../components/UsersComponent.vue' 
+import UsersComponent from '../components/UsersComponent.vue'
+import ProfileComponent from '../components/users/ProfileComponent.vue'
+import CourseComponent from '../components/users/CourseComponent.vue'
+import UserIndexComponent from '../components/users/UserIndexComponent.vue'
 
 const routes = [
   {
@@ -50,7 +53,24 @@ const routes = [
   {
     path: '/users/:userId(\\d+)?',
     name: 'users-list',
-    component: UsersComponent
+    component: UsersComponent,
+    children: [
+      {
+        path: '',
+        name: 'user-index',
+        component: UserIndexComponent
+      },
+      {
+        path: 'profile',
+        name: 'profile',
+        component: ProfileComponent
+      },
+      {
+        path: 'courses',
+        name: 'courses',
+        component: CourseComponent
+      }
+    ]
   },
   {
     path: '/:pathMatch(.*)',
