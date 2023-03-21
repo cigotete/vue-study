@@ -6,6 +6,7 @@ import UserPostComponent from '../components/UserPostComponent.vue'
 import NotFoundComponent from '../components/NotFoundComponent.vue'
 import OrderComponent from '../components/OrderComponent.vue'
 import ProductComponent from '../components/ProductComponent.vue'
+import UsersComponent from '../components/UsersComponent.vue' 
 
 const routes = [
   {
@@ -45,6 +46,11 @@ const routes = [
     path: '/store/:product',
     name: 'product',
     component: ProductComponent
+  },
+  {
+    path: '/users/:userId(\\d+)?',
+    name: 'users-list',
+    component: UsersComponent
   },
   {
     path: '/:pathMatch(.*)',
