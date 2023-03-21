@@ -11,6 +11,9 @@ export default createStore({
     }
   },
   getters: {
+    addressString(state) {
+      return state.addressStore.street + ' number ' + state.addressStore.number + ', ' + state.addressStore.city + ', ' + state.addressStore.country;
+    }
   },
   mutations: {
   },

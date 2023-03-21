@@ -1,11 +1,11 @@
 <template>
   <h1>Store component</h1>
   <h2>{{ welcomeMessage }}</h2>
-  <h3>{{ addressStore.street }}, number {{ addressStore.number }}, {{ addressStore.city }}, {{ addressStore.country }}</h3>
+  <h3>{{ addressString }}</h3>
 </template>
 
 <script>
-import { mapState } from 'vuex';
+import { mapState, mapGetters } from 'vuex';
 
 export default {
   /*
@@ -20,6 +20,11 @@ export default {
   // This is a way to call all properties stored in vuex
   computed: {
     ...mapState(['welcomeMessage', 'addressStore']),
+
+    // Each getter can also called, example this.$store.getters.addressString;
+
+    // This is a way to call all getters stored in vuex
+    ...mapGetters(['addressString']),
   }
 }
 </script>
