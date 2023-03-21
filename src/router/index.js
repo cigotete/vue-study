@@ -4,6 +4,8 @@ import BlogComponent from '../components/BlogComponent.vue'
 import PostComponent from '../components/PostComponent.vue'
 import UserPostComponent from '../components/UserPostComponent.vue'
 import NotFoundComponent from '../components/NotFoundComponent.vue'
+import OrderComponent from '../components/OrderComponent.vue'
+import ProductComponent from '../components/ProductComponent.vue'
 
 const routes = [
   {
@@ -33,6 +35,16 @@ const routes = [
     path: '/user/:user/post/:post',
     name: 'user-post',
     component: UserPostComponent
+  },
+  {
+    path: '/store/:orderId(\\d+)',
+    name: 'order',
+    component: OrderComponent
+  },
+  {
+    path: '/store/:product',
+    name: 'product',
+    component: ProductComponent
   },
   {
     path: '/:pathMatch(.*)',
