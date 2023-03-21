@@ -10,6 +10,7 @@ import UsersComponent from '../components/UsersComponent.vue'
 import ProfileComponent from '../components/users/ProfileComponent.vue'
 import CourseComponent from '../components/users/CourseComponent.vue'
 import UserIndexComponent from '../components/users/UserIndexComponent.vue'
+import StoreComponent from '../components/StoreComponent.vue'
 
 const routes = [
   {
@@ -38,6 +39,11 @@ const routes = [
     path: '/posts/:post',
     name: 'post',
     component: PostComponent
+  },
+  {
+    path: '/store',
+    name: 'store',
+    component: StoreComponent
   },
   {
     path: '/store/:orderId(\\d+)',
