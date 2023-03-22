@@ -8,7 +8,8 @@ export default createStore({
       number: 123,
       city: 'Bogota',
       country: 'Colombia'
-    }
+    },
+    count: 0
   },
   getters: {
     addressString(state) {
@@ -16,6 +17,12 @@ export default createStore({
     }
   },
   mutations: {
+    decrement(state) {
+      state.count--;
+    },
+    increment(state) {
+      state.count++;
+    }
   },
   actions: {
   },
