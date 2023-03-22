@@ -17,6 +17,9 @@ export default createStore({
     }
   },
   mutations: {
+    changeWelcomeMessage(state, message) {
+      state.welcomeMessage = message;
+    },
     decrement(state) {
       state.count--;
     },

@@ -10,14 +10,29 @@
   <button @click="decrement()">-</button>
   <span> {{ ' ' + count + ' ' }} </span>
   <button @click="increment()">+</button>
+
+  <p>Mutation with parameter</p>
+    <form @submit.prevent="changeWelcomeMessageComponent()">
+      <input type="text" v-model="welcomeMessageComponent">
+      <button>Update</button>
+    </form>
 </template>
 
 <script>
 import { mapState, mapGetters, mapMutations } from 'vuex';
 
 export default {
+  data() {
+    return {
+      welcomeMessageComponent: '',
+    };
+  },
   methods: {
-    ...mapMutations(['decrement', 'increment']),
+    ...mapMutations(['decrement', 'increment', 'changeWelcomeMessage']),
+    changeWelcomeMessageComponent() {
+      this.changeWelcomeMessage(this.welcomeMessageComponent);
+      this.welcomeMessageComponent = '';
+    },
   },
   computed: {
     ...mapState(['welcomeMessage', 'addressStore', 'count']),
