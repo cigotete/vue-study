@@ -29,10 +29,13 @@ export default createStore({
   },
   actions: {
     changeWelcomeMessage({ commit }, message) {
-      setTimeout(() => {
-        console.log('Updating data base');
-        commit('changeWelcomeMessage', message);
-      }, 2000);
+      return new Promise((resolve) => {
+        setTimeout(() => {
+          console.log('Updating data base');
+          commit('changeWelcomeMessage', message);
+          resolve();
+        }, 2000);
+      });
     }
   },
   modules: {

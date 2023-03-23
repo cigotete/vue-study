@@ -33,8 +33,9 @@ export default {
     changeWelcomeMessageComponent() {
 
       // Trigger an action
-      this.changeWelcomeMessage(this.welcomeMessageComponent);
-      this.welcomeMessageComponent = '';
+      this.changeWelcomeMessage(this.welcomeMessageComponent).then(() => {
+        this.welcomeMessageComponent = '';
+      });
     },
   },
   computed: {
