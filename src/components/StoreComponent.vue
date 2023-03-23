@@ -19,7 +19,7 @@
 </template>
 
 <script>
-import { mapState, mapGetters, mapMutations } from 'vuex';
+import { mapState, mapGetters, mapMutations, mapActions } from 'vuex';
 
 export default {
   data() {
@@ -29,8 +29,11 @@ export default {
   },
   methods: {
     ...mapMutations(['decrement', 'increment']),
+    ...mapActions(['changeWelcomeMessage']),
     changeWelcomeMessageComponent() {
-      this.$store.dispatch('changeWelcomeMessage', this.welcomeMessageComponent);
+
+      // Trigger an action
+      this.changeWelcomeMessage(this.welcomeMessageComponent);
       this.welcomeMessageComponent = '';
     },
   },
