@@ -29,11 +29,11 @@ export default {
   },
   methods: {
     ...mapMutations(['decrement', 'increment']),
-    ...mapActions(['changeWelcomeMessage']),
+    ...mapActions(['confirmationChangeWelcomeMessage']),
     changeWelcomeMessageComponent() {
 
       // Trigger an action
-      this.changeWelcomeMessage(this.welcomeMessageComponent).then(() => {
+      this.confirmationChangeWelcomeMessage(this.welcomeMessageComponent).then(() => {
         this.welcomeMessageComponent = '';
       });
     },

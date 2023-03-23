@@ -31,12 +31,15 @@ export default createStore({
     changeWelcomeMessage({ commit }, message) {
       return new Promise((resolve) => {
         setTimeout(() => {
-          console.log('Updating data base');
           commit('changeWelcomeMessage', message);
           resolve();
         }, 2000);
       });
-    }
+    },
+
+    async confirmationChangeWelcomeMessage({ dispatch }, message) {
+      await dispatch('changeWelcomeMessage', message);
+      console.log('Data base updated');    }
   },
   modules: {
   }
