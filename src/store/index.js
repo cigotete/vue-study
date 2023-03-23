@@ -28,6 +28,12 @@ export default createStore({
     }
   },
   actions: {
+    changeWelcomeMessage(context, message) {
+      setTimeout(() => {
+        console.log('Updating data base');
+        context.commit('changeWelcomeMessage', message);
+      }, 2000);
+    }
   },
   modules: {
   }

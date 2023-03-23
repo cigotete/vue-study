@@ -28,9 +28,9 @@ export default {
     };
   },
   methods: {
-    ...mapMutations(['decrement', 'increment', 'changeWelcomeMessage']),
+    ...mapMutations(['decrement', 'increment']),
     changeWelcomeMessageComponent() {
-      this.changeWelcomeMessage(this.welcomeMessageComponent);
+      this.$store.dispatch('changeWelcomeMessage', this.welcomeMessageComponent);
       this.welcomeMessageComponent = '';
     },
   },
