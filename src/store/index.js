@@ -28,10 +28,10 @@ export default createStore({
     }
   },
   actions: {
-    changeWelcomeMessage(context, message) {
+    changeWelcomeMessage({ commit }, message) {
       setTimeout(() => {
         console.log('Updating data base');
-        context.commit('changeWelcomeMessage', message);
+        commit('changeWelcomeMessage', message);
       }, 2000);
     }
   },
