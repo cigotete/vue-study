@@ -1,6 +1,7 @@
 import { createStore } from 'vuex'
 
 const moduleEcommerce = {
+  namespaced: true,
   state: {
     welcomeMessage: 'Wellcome to the store',
     addressStore: {
@@ -37,6 +38,7 @@ const moduleEcommerce = {
 }
 
 const moduleCounter = {
+  namespaced: true,
   state: {
     count: 0
   },

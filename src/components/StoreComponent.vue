@@ -3,9 +3,12 @@
   <h2>{{ $store.state.ecommerce.welcomeMessage }}</h2>
   <h3>{{ addressString }}</h3>
 
+  <!--START This section will not work due is calling a
+    method that was isolated into a module -->
   <button @click="$store.commit('decrement')">-</button>
   <span> {{ ' ' + count + ' ' }} </span>
   <button @click="$store.commit('increment')">+</button>
+  <!--END-->
 
   <button @click="decrement()">-</button>
   <span> {{ ' ' + count + ' ' }} </span>
@@ -28,8 +31,8 @@ export default {
     };
   },
   methods: {
-    ...mapMutations(['decrement', 'increment']),
-    ...mapActions(['confirmationChangeWelcomeMessage']),
+    ...mapMutations('counter', ['decrement', 'increment']),
+    ...mapActions('ecommerce', ['confirmationChangeWelcomeMessage']),
     changeWelcomeMessageComponent() {
 
       // Trigger an action
@@ -48,7 +51,7 @@ export default {
         return state.counter.count
       },
     }),
-    ...mapGetters(['addressString']),
+    ...mapGetters('ecommerce', ['addressString']),
   }
 }
 </script>
