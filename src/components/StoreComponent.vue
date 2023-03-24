@@ -22,7 +22,10 @@
 </template>
 
 <script>
-import { mapState, mapGetters, mapMutations, mapActions } from 'vuex';
+//import { mapState, mapGetters, mapMutations, mapActions } from 'vuex';
+import { mapState, createNamespacedHelpers } from 'vuex';
+const {mapGetters, mapActions } = createNamespacedHelpers('ecommerce');
+const {mapMutations} = createNamespacedHelpers('counter');
 
 export default {
   data() {
@@ -31,8 +34,8 @@ export default {
     };
   },
   methods: {
-    ...mapMutations('counter', ['decrement', 'increment']),
-    ...mapActions('ecommerce', ['confirmationChangeWelcomeMessage']),
+    ...mapMutations(['decrement', 'increment']),
+    ...mapActions(['confirmationChangeWelcomeMessage']),
     changeWelcomeMessageComponent() {
 
       // Trigger an action
@@ -51,7 +54,7 @@ export default {
         return state.counter.count
       },
     }),
-    ...mapGetters('ecommerce', ['addressString']),
+    ...mapGetters(['addressString']),
   }
 }
 </script>
