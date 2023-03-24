@@ -1,6 +1,6 @@
 <template>
   <h1>Store component</h1>
-  <h2>{{ welcomeMessage }}</h2>
+  <h2>{{ $store.state.ecommerce.welcomeMessage }}</h2>
   <h3>{{ addressString }}</h3>
 
   <button @click="$store.commit('decrement')">-</button>
@@ -39,7 +39,15 @@ export default {
     },
   },
   computed: {
-    ...mapState(['welcomeMessage', 'addressStore', 'count']),
+    ...mapState({
+      welcomeMessage: (state) => {
+        return state.ecommerce.welcomeMessage
+      },
+      addressStore: state => state.ecommerce.address, //Simplified version
+      count: (state) => {
+        return state.counter.count
+      },
+    }),
     ...mapGetters(['addressString']),
   }
 }
