@@ -1,4 +1,4 @@
-const moduleCounter = {
+export const moduleCounter = {
   namespaced: true,
   state: {
     count: 0

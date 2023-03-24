@@ -1,4 +1,4 @@
-const moduleEcommerce = {
+export const moduleEcommerce = {
   namespaced: true,
   state: {
     welcomeMessage: 'Wellcome to the store',
@@ -34,5 +34,3 @@ const moduleEcommerce = {
       console.log('Data base updated');    }
   },
 }
-
-export default moduleEcommerce;
